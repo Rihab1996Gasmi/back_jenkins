@@ -36,7 +36,7 @@ agent any
         
              stage ("3rd Stage : unit testing"){
             steps{
-                sh "mvn test -DskipTests"
+                sh "mvn test -Dmaven.test.failure.ignore=false"
             }
         
         }
@@ -44,7 +44,7 @@ agent any
         stage ("4th Stage : Integration testing"){
             
                 steps {
-                sh "mvn verify -DskipUnitTests"
+                sh "mvn verify"
                 
                 }
             }
