@@ -34,7 +34,7 @@ agent any
         
 
         
-             stage ("3rd Stage : unit testing"){
+             stage ("3rd Stage : Unit testing"){
             steps{
                 sh "mvn test -Dmaven.test.failure.ignore=false"
             }
@@ -114,7 +114,7 @@ agent any
             }
         }
         
-        stage ("7th stage :Docker image build") {
+        stage ("7th stage : Docker image build") {
             steps {
                 script {
                 sh 'docker image build -t $JOB_NAME:v1.$BUILD_ID .'
